@@ -26,3 +26,17 @@
     }
   }
 }
+
+@include selectors-for-width('xs');
+
+@media only screen and (min-width: 768px) {
+  @include selectors-for-width('sm');
+}
+
+@media only screen and (min-width: 992px) {
+  @include selectors-for-width('md');
+}
+
+@media only screen and (min-width: 1200px) {
+  @include selectors-for-width('lg');
+}
