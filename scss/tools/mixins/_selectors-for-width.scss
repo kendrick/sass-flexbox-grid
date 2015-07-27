@@ -1,0 +1,66 @@
+@mixin selectors-for-width($width) {
+  $num-columns: 12 !default;
+
+  .grid__col-#{$width} {
+    flex: 0 0 auto;
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    padding: 0 0.5rem;
+
+    @for $i from 1 through $num-columns {
+      @include modifier(#{$i}) {
+        flex-basis: ($i / $num-columns)*100%;
+        max-width: ($i / $num-columns)*100%;
+      }
+
+      @if $i < $num-columns {
+        @include modifier('offset-#{$i}') {
+          margin-left: ($i / $num-columns)*100%;
+        }
+      }
+    }
+  }
+
+  .grid__row-#{$width}--start {
+    justify-content: flex-start;
+    text-align: flex-start;
+  }
+
+  .grid__row-#{$width}--center {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .grid__row--#{$width}-end {
+    justify-content: flex-end;
+  }
+
+  .grid__row-#{$width}--top {
+    align-items: flex-start;
+  }
+
+  .grid__row-#{$width}--middle {
+    align-items: center;
+  }
+
+  .grid__row-#{$width}--bottom {
+    align-items: flex-end;
+  }
+
+  .grid__row-#{$width}--around {
+    justify-content: space-around;
+  }
+
+  .grid__row-#{$width}--between {
+    justify-content: space-between;
+  }
+
+  .grid__col-#{$width}--first {
+    order: -1;
+  }
+
+  .grid__col-#{$width}--last {
+    order: 1;
+  }
+}
