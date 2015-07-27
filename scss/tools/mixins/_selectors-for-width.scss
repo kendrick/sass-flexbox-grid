@@ -32,7 +32,7 @@
     text-align: center;
   }
 
-  .grid__row--#{$width}-end {
+  .grid__row-#{$width}--end {
     justify-content: flex-end;
   }
 

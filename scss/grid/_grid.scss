@@ -9,8 +9,7 @@
   }
 
   @include element('row') {
-    flex: 0 1 auto;
-    flex-direction: row;
+    display: flex;
     flex-wrap: wrap;
 
     @include modifier('reverse') {
