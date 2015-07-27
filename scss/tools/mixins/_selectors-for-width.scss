@@ -6,12 +6,14 @@
     flex-basis: 0;
     flex-grow: 1;
     max-width: 100%;
-    padding: 0 0.5rem;
+    padding: 0 0.3rem;
 
     @for $i from 1 through $num-columns {
       @include modifier(#{$i}) {
         flex-basis: ($i / $num-columns)*100%;
+        flex-grow: 1;
         max-width: ($i / $num-columns)*100%;
+        padding: 0 0.3rem;
       }
 
       @if $i < $num-columns {
