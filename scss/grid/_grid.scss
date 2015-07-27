@@ -1,0 +1,28 @@
+.grid {
+  @include element('wrapper') {
+    box-sizing: border-box;
+    flex: 1;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @include element('row') {
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    @include modifier('reverse') {
+      flex-direction: row-reverse;
+    }
+  }
+
+  @include element('column') {
+    flex-direction: column;
+
+    @include modifier('reverse') {
+      flex-direction: column-reverse;
+    }
+  }
+}
